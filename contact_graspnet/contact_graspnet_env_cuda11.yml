@@ -1,0 +1,41 @@
+name: contact_graspnet_cuda11
+channels:
+  - conda-forge
+  - nvidia
+  - defaults
+dependencies:
+  - python=3.7
+  - pip
+  - numpy=1.19.*
+  - scipy=1.4.*
+  - matplotlib=3.3.*
+  - tqdm
+  - pyyaml
+  - trimesh
+  - shapely
+  - rtree
+  - mayavi
+  - vtk=8.2.*
+  - pyopengl
+  - opencv
+
+  # CUDA 런타임(환경 내부)
+  - cudatoolkit=11.1
+  - cudnn=8.0
+
+  # pointnet2 tf_ops 컴파일용 nvcc (환경 내부)
+  - nvidia::cuda-nvcc
+
+  # 빌드 도구(환경 내부)
+  - cmake
+  - make
+  - ninja
+  - gcc_linux-64
+  - gxx_linux-64
+
+  - pip:
+      # Ampere(3080Ti)에서는 TF 2.4+가 보통 더 수월함 (TF 2.4+에서 CUDA 11 안내) :contentReference[oaicite:5]{index=5}
+      - tensorflow-gpu==2.4.1
+      - tensorboard==2.4.1
+      - pyrender==0.1.43
+      - freetype-py==2.2.0
