@@ -25,6 +25,8 @@ setup(
     entry_points={
         'console_scripts': [
             'grasp_inference_node = contact_grasp_pkg.grasp_inference_node:main',
+            'grasp_filter_inference_node = contact_grasp_pkg.grasp_filter_inference_node:main',
+            'grasp_filter_inference_Robot_node = contact_grasp_pkg.grasp_filter_inference_Robot_node:main',
         ],
     },
 )
